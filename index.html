@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <script src="https://kit.fontawesome.com/b069b646ff.js" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(61, 59, 57);
+        }
+        .info{
+            color: rgb(252, 252, 252);
+            border-width: 4px;
+            border-style: solid;
+            border-color: rgb(119, 0, 255);
+            border-right-color: rgb(235, 220, 16);
+            border-left-color: rgb(235, 220, 16);
+            width: 400px;
+            margin: 0px auto;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .form{
+            width: 320px;
+            background-color: rgb(207, 207, 207);
+            text-align: center;
+            margin: 0px auto;
+            padding: 80px 5px;
+            margin-top: 30px;
+            border-radius: 5px;
+            box-shadow: -3px -3px 3px red;
+        }
+        #ipbox{
+            padding: 5px 5px;
+            width: 170px;
+            border-radius: 5px;
+            border: 3px solid rgb(113, 17, 192);
+        }
+        #output{
+            max-width: 80%;
+
+            height: 150px;
+            margin: 0px auto;
+            margin-top: 30px;
+          
+         transition: 0.1s linear;
+     text-align: center;
+     border: 2px solid #ffffff;
+         
+        }
+        #midoutput{
+            border: 2px solid #fff;
+            width: 170px;
+            padding: 8px 0px;
+            text-align: center;
+            font-weight: bold;
+            background-color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+      
+        }
+
+        #midoutput,#copy{
+            margin-top: 20px;
+        }
+
+        #copy{
+            padding: 6px 8px;
+            font-weight: bold;
+            border-radius: 3px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+
+footer{
+    background-color: #111;
+width: 100%;
+    position: absolute;
+    bottom: 10;
+padding: 10px  14px;
+}
+footer .foot p{
+  text-align: center;
+  color: #fff;
+}
+footer .social-icons {
+    text-align: center;
+    margin-top: 8px;
+}
+footer .social-icons i{
+color: rgb(255, 255, 255);
+margin-left: 8px;
+font-size: 20px;
+}
+
+    </style>
+</head>
+<body><div class="info">
+
+
+    <h2>Color Picker Mini Project</h2>
+    <h3>Coded By Vikas Kumar</h3>
+    </div>
+   
+
+ <H2 style="text-align: center;color: yellow;margin-top: 30PX;padding: 4px;">Select Color👇👇</H2>
+    <HR style="width: 300PX; height: 3PX; text-align: center;margin: 0PX auto;background-color: rgb(122, 16, 221);margin-top: 3px;"></HR>
+
+<div class="main">
+<div class="form">
+<input type="text" id="ipbox">
+<br><br>
+<input type="color" id="colorbox">
+<br>
+</div>
+    </div>
+
+ <H2 style="text-align: center;color: yellow;margin-top: 30PX;padding: 4px;">OUTPUT👇👇</H2>
+    <HR style="width: 300PX; height: 3PX; text-align: center;margin: 0PX auto;background-color: rgb(122, 16, 221);margin-top: 3px;"></HR>
+
+
+    <!-- output section -->
+    <div id="output">
+        <input type="text" id="midoutput" placeholder="HEX CODE" ><br>
+<button id="copy">Click To Copy</button>
+    </div>
+    
+    <br><br><br><br>
+
+    <footer>
+ <div class="foot">
+
+   <p>Coded by <span style="color: rgb(243, 200, 9);">Vikas Kumar</span>| Follow Me |</p>
+<div class="social-icons">
+ <a href="https://www.linkedin.com/in/vikas-kumar-abb131192/"><i class="fa fa-linkedin  social-btn"></i></a> 
+<a href="https://github.com/VikasKumar077"> <i class="fa fa-github  social-btn"></i></a>
+
+ <a href="https://www.instagram.com/vkraj.07/"> <i class="fa fa-instagram  social-btn"></i></a>
+  <a href="mailto: vkmi0853@gmail.com"> <i class="fa fa-envelope  social-btn"></i></a> 
+</div>
+ </div>
+</footer>
+    <script>
+
+let ipbox1=document.getElementById("ipbox");
+let colorbox=document.getElementById("colorbox");
+let op=document.getElementById("output");
+let middleoutput=document.getElementById("midoutput");
+
+colorbox.addEventListener('input',()=>{
+    let cvalue=colorbox.value;
+    ipbox1.value=cvalue;
+// document.body.style.backgroundColor=cvalue;
+
+// document.getElementById("output").style.backgroundColor=cvalue;
+op.style.backgroundColor=cvalue;
+middleoutput.value=cvalue;
+
+
+
+});
+
+let copybtn=document.getElementById("copy");
+
+copybtn.addEventListener('click',()=>{
+
+console.log('Coptbtn is working');
+
+let copyvalue=middleoutput.select();
+ 
+
+document.execCommand("copy");
+
+console.log(copyvalue);
+
+})
+
+
+
+    </script>
+
+</body>
+</html>
